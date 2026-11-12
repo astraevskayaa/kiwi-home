@@ -29,3 +29,29 @@
 .nav{min-height:74px;align-items:center;padding:10px 4px max(12px,env(safe-area-inset-bottom))}.nav button{flex:1;min-width:0;font-size:12px;line-height:1.2;display:flex;align-items:center;flex-direction:column;gap:5px}.nav button span{font-size:23px;margin:0;height:28px;display:flex;align-items:center}.nav .nav-face{width:29px;height:29px;margin:0}.nav button:last-child span{font-size:18px;font-weight:900;letter-spacing:-.04em}
 /* Более компактные карточки расписания, как в утверждённом макете */
 .schedule .detail{padding:15px 18px;border-radius:24px}.schedule summary{font-size:16px}.schedule summary small{margin-top:5px}.section-title{margin-top:16px}
+
+/* v4.2: reliable composition based on approved mockup */
+.hero{position:relative;isolation:isolate;min-height:258px;overflow:visible;padding:26px 19px 23px;background:linear-gradient(115deg,#ffe5cc,#ffdec3)}
+.hero-copy{position:relative;z-index:2;width:58%;height:100%;min-height:206px;display:flex;flex-direction:column;justify-content:space-between;align-self:stretch;pointer-events:none}
+.hero h1{font-size:clamp(27px,7.1vw,37px);line-height:1.08;letter-spacing:-.045em;margin:0 0 18px;max-width:100%;white-space:normal}
+.hero-paw{font-size:.68em;vertical-align:middle}
+.hero p{max-width:94%;font-size:clamp(12px,3.1vw,15px);line-height:1.48;margin:0 0 4px}
+.hero-photo{position:absolute;right:-9px;bottom:-16px;top:auto;width:45%;height:215px;object-fit:contain;object-position:right bottom;z-index:1;filter:drop-shadow(0 5px 4px #754b4225)}
+.hero:before{right:23%;top:13px;z-index:1}
+@media(max-width:390px){.hero{min-height:248px;padding:24px 16px 20px}.hero-copy{min-height:204px;width:59%}.hero h1{font-size:clamp(26px,7vw,31px)}.hero-photo{width:45%;height:205px;right:-7px;bottom:-14px}.hero p{font-size:12px}}
+@media(max-width:350px){.hero h1{font-size:25px}.hero-photo{width:42%;height:188px}.hero-copy{width:61%}}
+/* All photos in quick-access cards remain inside their colored panels */
+.photo-tile{overflow:hidden;display:flex;flex-direction:column;align-items:stretch;justify-content:flex-end;min-height:218px}
+.photo-tile img[src*="cutout"]{display:block;width:100%;height:130px;object-fit:contain;object-position:center bottom;background:transparent;margin:0 auto 12px}
+.photo-tile strong,.photo-tile small{display:block;text-align:left}
+/* Home banner is typographic: no clipped sleeping-cat crop */
+.section-banner.home-banner{min-height:132px;overflow:hidden;padding:22px 24px;display:flex;align-items:center}
+.home-banner>div{position:static;margin:0;width:100%;max-width:100%}
+.home-banner h1{font-size:clamp(27px,7vw,36px);white-space:normal}
+/* Consistent bottom navigation */
+.nav{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:0;padding:9px 4px max(11px,env(safe-area-inset-bottom));min-height:77px}
+.nav button{width:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;min-width:0;font-size:11px;font-weight:750;line-height:1.1}
+.nav .nav-symbol,.nav .nav-sos,.nav .nav-face{display:flex;align-items:center;justify-content:center;width:30px;height:30px;margin:0 auto;flex:0 0 30px}
+.nav .nav-symbol{font-size:25px;line-height:1}
+.nav .nav-face{object-fit:cover;object-position:center 22%;border:2px solid #f5bd9e;border-radius:50%;background:#ffe8db}
+.nav .nav-sos{background:#f04d42;color:white;font-size:11px!important;letter-spacing:0!important;border-radius:8px;font-weight:900;box-shadow:0 2px 4px #9e4d3a30}
