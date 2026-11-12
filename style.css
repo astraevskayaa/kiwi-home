@@ -58,3 +58,18 @@
 
 /* v5: faithful mockup navigation and balanced welcome */
 .nav{grid-template-columns:repeat(4,minmax(0,1fr));padding:10px 9px max(12px,env(safe-area-inset-bottom))}.nav button{gap:5px;font-size:12px}.nav svg{width:28px;height:28px;stroke:#8c6b5c;fill:none;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round;display:block}.nav button.active svg{stroke:#ef694d}.nav button:nth-child(2) svg{stroke:#e97858}.nav .nav-sos{width:31px;height:31px;font-size:11px!important;background:#f34d42;color:#fff;border-radius:8px;box-shadow:0 2px 6px #dc716a55}.hero{min-height:260px}.hero-copy{min-height:212px;width:63%;justify-content:space-between}.hero h1{font-size:clamp(27px,7.4vw,39px);line-height:1.08;margin:0}.hero p{font-size:clamp(12px,3.25vw,15px);line-height:1.52;max-width:96%;margin:0 0 5px}.hero-photo{right:-11px;width:47%;height:225px;bottom:-16px}.hero:before{right:22%;top:14px}.kiwi-cover{background:#ffede5;border-radius:28px;position:relative;overflow:hidden;padding:16px 18px 0;margin:0 0 18px;min-height:190px}.kiwi-cover-heading{font-size:24px;font-weight:900;display:flex;align-items:center;gap:8px}.kiwi-cover-heading span{margin-left:auto;color:#ec795e;font-size:33px}.kiwi-cover img{display:block;width:100%;height:152px;object-fit:contain;object-position:center bottom;margin-top:-3px;filter:drop-shadow(0 4px 5px #aa705a25)}.links-button{display:flex;justify-content:space-between;align-items:center;width:100%;background:#ffe8d9;color:#a65543;border:1px solid #f5d6c6;padding:17px 18px;border-radius:19px;font-weight:900;font-size:16px;margin:18px 0 6px;cursor:pointer}.links-button span{font-size:24px}.notice{margin-top:20px}.notice strong{color:#b96856}.photo-tile img{object-fit:contain!important}.photo-tile{overflow:hidden}.photo-tile img[src*="cutout"]{background:transparent!important}.tile:nth-child(4n+1){background:#ffe8e3}.tile:nth-child(4n+2){background:#e6f1df}.tile:nth-child(4n+3){background:#fff1ca}.tile:nth-child(4n){background:#ece6fc}@media(max-width:390px){.hero-copy{width:63%;min-height:205px}.hero p{font-size:12px}.hero-photo{width:45%;height:205px}.hero{min-height:252px}}
+
+/* v5.2: fix touch hit targets, functional section tabs and balanced hero */
+.nav{z-index:9999;pointer-events:auto;isolation:isolate;touch-action:manipulation}
+.nav button{position:relative;z-index:1;pointer-events:auto;touch-action:manipulation;min-height:55px;-webkit-tap-highlight-color:transparent}
+.nav button svg,.nav button span{pointer-events:none}
+.mini-tabs{gap:7px;overflow-x:auto;scrollbar-width:none;padding:2px 0 5px}
+.mini-tabs::-webkit-scrollbar{display:none}
+.mini-tabs button{border:0;white-space:nowrap;border-radius:22px;background:#fff0e8;padding:11px 13px;font-size:13px;color:#4b3029;cursor:pointer;flex-shrink:0;touch-action:manipulation}
+.mini-tabs button.selected{background:#f37d60;color:white;font-weight:800}
+.hero{min-height:268px}
+.hero-copy{width:62%;min-height:215px}
+.hero h1{margin-bottom:12px}
+.hero p{font-size:clamp(13px,3.5vw,16px);line-height:1.65;max-width:100%;margin-bottom:10px}
+.hero-photo{pointer-events:none}
+@media(max-width:390px){.hero{min-height:262px}.hero-copy{min-height:215px}.hero p{font-size:13px;line-height:1.55}}
